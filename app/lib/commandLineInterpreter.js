@@ -1,10 +1,11 @@
 let CommandLineInterpreter =  {
-  run(command) {
+  getOutput(command) {
     if (command.match(/help$/)) {
       return `Command line v1.0
         Type 'help name' to find out more about the function 'name'.
 
         menu [name]  # navigates to menu
+        clear        # clears command window
         help         # prints this help page
         `.replace(/\s/,"\u00a0");
     } else if (command.match(/help\smenu$/)) {
