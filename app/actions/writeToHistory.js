@@ -2,7 +2,7 @@ import CommandLineInterpreter from './../lib/commandLineInterpreter.js';
 
 function writeToHistory(e, state) {
   if (e.keyCode === 13) { 
-    let output = CommandLineInterpreter.run(state.get('inputText'));
+    let output = CommandLineInterpreter.getOutput(state.get('inputText'));
 
     let commandHistory = state.get('history').map(x => x);
     commandHistory.push({
@@ -10,6 +10,8 @@ function writeToHistory(e, state) {
       output: output,
     });
     state.set('history', commandHistory);
+
+    CommandLineInterpreter.run(state.get('inputText'), state);
   }
 }
 

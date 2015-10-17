@@ -7,6 +7,7 @@ const model = Model({
   cursorPosition: 0,
   shellPrompt: "> ",
   history: [ ],
+  menuPage: "starter",
 });
 
 export default Controller(model);

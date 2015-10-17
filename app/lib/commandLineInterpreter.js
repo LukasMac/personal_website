@@ -25,8 +25,18 @@ let CommandLineInterpreter =  {
         about # about page
         contacts # contacts page
         `.replace(/\s/,"\u00a0");
+    } else if (command.match(/clear$/)) {
+      return "";
     }
     return command + ": command not found. Type 'help' to get list of available commands";
+  },
+
+  run(command, state) {
+    if (command.match(/clear$/)) {
+      state.set('history', [ ]);
+    } else if (command.match(/menu\sabout$/)) {
+      state.set('menuPage', 'about');
+    }
   }
 }
 
