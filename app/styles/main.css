@@ -1,0 +1,29 @@
+body {
+  background-image: url("./../assets/images/metal-wallpaper-4.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.terminal-container {
+  position: absolute;
+  overflow: scroll;
+  overflow-y: scroll;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  height: 50%;
+  color: #FFF;
+  font-family: "Lucida Console", Monaco, monospace
+}
+.terminal-container .text-container {
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  min-height: 10%;
+}
+
+.terminal-cursor {
+  background-color: #FFF;
+  text: #000;
+}
