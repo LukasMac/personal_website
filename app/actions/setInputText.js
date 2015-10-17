@@ -1,4 +1,8 @@
 function setInputText(e, state) {
+  if ([37, 39].indexOf(e.keyCode) !== -1) {
+    return;
+  }
+
   if (e.keyCode == 13) {
     state.set('inputText', "");
   } else {
