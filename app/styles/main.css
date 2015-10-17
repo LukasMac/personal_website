@@ -1,8 +1,5 @@
 body {
-  background-image: url("./../assets/images/metal-wallpaper-4.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background-color: #022833;
 }
 
 .terminal-container {

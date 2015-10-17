@@ -4,6 +4,6 @@ import setCursorPosition from './../actions/setCursorPosition.js';
 
 export default [
   writeToHistory,
-  setCursorPosition,
   setInputText,
+  setCursorPosition,
 ];
