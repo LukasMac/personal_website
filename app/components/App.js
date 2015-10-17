@@ -55,7 +55,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props.cursorPosition);
     return (
       <div>
         <h1>Hello</h1>

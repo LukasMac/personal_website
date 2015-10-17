@@ -21,7 +21,15 @@ function setInputText(e, state) {
       state.get('inputText').substring(length + currentPosition + 1, length)
     );
   } else {
-    state.set('inputText', state.get('inputText') + String.fromCharCode(e.keyCode).toLowerCase());
+    let key = String.fromCharCode(e.keyCode).toLowerCase();
+    if (e.keyCode === 32) {
+      key = "\u00a0"
+    }
+    state.set('inputText',
+      state.get('inputText').substring(0, length + currentPosition) +
+      key +
+      state.get('inputText').substring(length + currentPosition, length)
+    );
   }
 }
 
