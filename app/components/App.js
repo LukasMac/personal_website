@@ -1,5 +1,8 @@
 import React from 'react';
-import {Decorator as Cerebral} from 'cerebral-react';
+import { PageHeader } from 'react-bootstrap';
+import { Decorator as Cerebral } from 'cerebral-react';
+import AboutPage from './aboutPage.js';
+import StartPage from './startPage.js';
 
 var _this = null;
 
@@ -9,6 +12,7 @@ var _this = null;
   history: ['history'],
   shellPrompt: ['shellPrompt'],
   cursorPosition: ['cursorPosition'],
+  menuPage: ['menuPage'],
 })
 class App extends React.Component {
   componentDidMount() {
@@ -27,6 +31,14 @@ class App extends React.Component {
       }
     });
     this.props.signals.appMounted();
+  }
+
+  renderPage() {
+    if (this.props.menuPage === "about") {
+      return <AboutPage />
+    }
+
+    return <StartPage />
   }
 
   renderCommandLineWelcome() {
@@ -82,7 +94,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello</h1>
+        {this.renderPage()}
         <div className="terminal-container">
           <div className="text-container">
           {this.renderCommandLineWelcome()}
