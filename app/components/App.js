@@ -17,7 +17,7 @@ class App extends React.Component {
       _this.props.signals.keyPressed(e);
     });
     document.addEventListener('keyup', function (e) {
-      if ([8, 37, 39, 46, 32].indexOf(e.keyCode) !== -1) {
+      if ([8, 37, 39, 46].indexOf(e.keyCode) !== -1) {
         _this.props.signals.keyPressed(e);
       }
     });
