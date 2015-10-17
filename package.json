@@ -17,6 +17,7 @@
     "express": "^4.13.3",
     "file-loader": "^0.8.4",
     "http-proxy": "^1.11.2",
+    "less-loader": "^2.2.1",
     "style-loader": "^0.12.4",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
@@ -28,9 +29,13 @@
     "cerebral-immutable-store": "^0.1.1",
     "cerebral-react": "^0.4.1",
     "immutable-store": "^0.5.5",
+    "jquery": "^2.1.4",
     "keymaster": "^1.6.2",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
     "react": "^0.14.0",
     "react-bootstrap": "^0.27.1",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "url-loader": "^0.5.6"
   }
 }

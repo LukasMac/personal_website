@@ -17,6 +17,7 @@ var config = {
     // The script refreshing the browser on none hot updates
     'webpack-dev-server/client?http://localhost:8080',
 
+    './app/styles/main.css',
     // Our application
     mainPath],
   output: {
@@ -51,9 +52,10 @@ var config = {
       test: /\.css$/,
       loader: 'style!css'
     },
-
-    { test: /\.png$/, loader: "file-loader" },
-    { test: /\.jpg$/, loader: "file-loader" },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      },
     ]
   },
 

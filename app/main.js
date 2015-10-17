@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import controller from './controller.js';
 import { Container } from 'cerebral-react';
-import './styles/main.css';
 
 import App from './components/App.js';
 

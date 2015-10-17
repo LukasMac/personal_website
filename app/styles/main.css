@@ -11,7 +11,7 @@ body {
   left: 0px;
   height: 50%;
   color: #FFF;
-  font-family: "Lucida Console", Monaco, monospace
+  font-family: "Lucida Console", Monaco, monospace;
 }
 .terminal-container .text-container {
   position: absolute;
