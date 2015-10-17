@@ -19,12 +19,27 @@ class App extends React.Component {
     this.props.signals.appMounted();
   }
 
+  renderCommandLineWelcome() {
+    return (
+    <span>
+      <br />Welcome, to get more information please type 'help'<br /><br />
+    </span>
+    );
+  }
+
   renderHistory() {
     return (
-        this.props.history.map(function(item, index) {
-          return (<span key={index}>{item}<br /></span>);
-        })
-      );
+      this.props.history.map(function(item, index) {
+        return (
+          <span key={index}>
+            {this.props.shellPrompt}{item.command}<br />
+            {item.output.split(/\n/).map(function(line, index) {
+              return (<span key={index}>{line}<br /></span>);
+            })}
+          </span>
+        );
+      }, this)
+    );
   }
 
   textBeforeCursor() {
@@ -60,6 +75,7 @@ class App extends React.Component {
         <h1>Hello</h1>
         <div className="terminal-container">
           <div className="text-container">
+          {this.renderCommandLineWelcome()}
           {this.renderHistory()}
           {this.props.shellPrompt}{this.renderInputTextWithCursor()}
           </div>

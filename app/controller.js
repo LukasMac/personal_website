@@ -6,7 +6,7 @@ const model = Model({
   inputText: "",
   cursorPosition: 0,
   shellPrompt: "> ",
-  history: [],
+  history: [ ],
 });
 
 export default Controller(model);
