@@ -21,6 +21,11 @@ class App extends React.Component {
         _this.props.signals.keyPressed(e);
       }
     });
+    document.addEventListener('keydown', function (e) {
+      if ([8, 37, 39, 46].indexOf(e.keyCode) !== -1) {
+        _this.props.signals.keyPressed(e);
+      }
+    });
     this.props.signals.appMounted();
   }
 
