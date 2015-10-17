@@ -13,8 +13,13 @@ var _this = null;
 class App extends React.Component {
   componentDidMount() {
     _this = this;
-    document.addEventListener('keyup', function (e) {
+    document.addEventListener('keypress', function (e) {
       _this.props.signals.keyPressed(e);
+    });
+    document.addEventListener('keyup', function (e) {
+      if ([8, 37, 39, 46, 32].indexOf(e.keyCode) !== -1) {
+        _this.props.signals.keyPressed(e);
+      }
     });
     this.props.signals.appMounted();
   }
