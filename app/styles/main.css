@@ -3,7 +3,7 @@
   width: 50%;
   margin: 0 auto;
   max-height: 100%;
-  min-height: 145px;
+  min-height: 200px;
   overflow: hidden;
   bottom: 0px;
 }
@@ -11,7 +11,7 @@
 .terminal-container .text-container {
   position:absolute;
   font-family: "Lucida Console", Monaco, monospace;
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
   color: #FFF;
   bottom:0;
@@ -47,12 +47,12 @@
 @-webkit-keyframes updown {
   0%, 100% {-webkit-transform: translateY(0);}
   50% {-webkit-transform: translateY(-10px);}
-} 
+}
 
 @keyframes updown{
   0%, 100% {transform: translateY(0);}
   50% {transform: translateY(-10px);}
-} 
+}
 
 .down-arrow-container {
   color: #878787;
@@ -63,8 +63,39 @@
 
 
 .down-arrow-container .down-arrow {
-  background-image: url('../images/arrow.png');
+  background-image: url('https://p.w3layouts.com/demos/jalil/web/images/dwn.png');
   background-repeat: no-repeat;
-  background-position: center bottom; 
-  height: 33px;
+  background-position: center bottom;
+  height: 40px;
+  width: 100px;
+}
+
+.face-image {
+  height: 200px;
+  width: 200px;
+}
+
+.main-content {
+  height: 200px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.example-enter {
+  background-color: #f00;
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

@@ -1,18 +1,21 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 
 class AboutPage extends React.Component {
 
   render() {
     return (
-      <div className="banner wow fadeIn" data-wow-delay="0.5s">
-        <div className="container">
-          <div className="banner-info text-center">
-            <h1>Hello, I'm Lukas Maciulis</h1><br />
-            <span> </span>
-            <p>We are a digital agency that believes in building things that are  meaningful!</p>
-          </div>
-        </div>
+      <div>
+        <Row>
+        <Col xs={6} md={4} className="text-right">
+          <Image
+            src="https://scontent.xx.fbcdn.net/hphotos-prn2/t31.0-8/10457660_10154297097070635_6919546779521449027_o.jpg"
+            className="face-image" circle/>
+        </Col>
+        <Col xs={6} md={8}>
+          One: aaaa
+        </Col>
+        </Row>
       </div>
     );
   }
