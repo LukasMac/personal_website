@@ -18,7 +18,12 @@ var config = {
     'webpack-dev-server/client?http://localhost:8080',
 
     './app/styles/main.css',
+    './app/css/bootstrap.css',
+    './app/css/animate.css',
+    './app/css/style.css',
     // Our application
+    // './app/js/wow.min.js',
+    // './app/js/easing.js',
     mainPath],
   output: {
 
@@ -56,6 +61,7 @@ var config = {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
       },
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
     ]
   },
 

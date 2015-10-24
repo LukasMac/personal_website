@@ -47,7 +47,7 @@ class App extends React.Component {
   renderCommandLineWelcome() {
     return (
     <span>
-      <br />Welcome, to get more information please type 'help'<br /><br />
+      <br /><center>Welcome, to get more information please type 'help'</center><br /><br />
     </span>
     );
   }
@@ -98,6 +98,9 @@ class App extends React.Component {
     return (
       <div>
         {this.renderPage()}
+        <div className="down-arrow-container">
+          <div className="down-arrow"></div>
+        </div>
         <div className="terminal-container">
           <div className="text-container">
           {this.renderCommandLineWelcome()}
