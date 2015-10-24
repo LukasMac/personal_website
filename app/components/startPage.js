@@ -1,22 +1,29 @@
 import React from 'react';
-import { Tooltip, OverlayTrigger, Button } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
+import { Tooltip, Overlay, Button } from 'react-bootstrap';
 import { Row, Col, Image } from 'react-bootstrap';
 class StartPage extends React.Component {
 
   render() {
-    let tooltip = (
-      <Tooltip placement="top" id="1">
-        Try to use Command Line bellow, to experience what developers do everyday
-      </Tooltip>
-    );
+    const tooltip = (
+      <Tooltip id={1}>
+        Try to use command line below
+      </Tooltip>);
+  
+    const sharedProps = {
+      show: true,
+      container: this,
+      target: () => ReactDOM.findDOMNode(this.refs.target)
+    };
 
     return (
-      <div className="inlineblock">
-          <div className="down-arrow-container">
-          <OverlayTrigger placement="top" overlay={tooltip}>
-            <Button bsStyle="link" className="down-arrow"></Button>
-          </OverlayTrigger>
-          </div>
+      <div className="inlineblock start-page">
+        <div ref="target" className="down-arrow-container">
+          <Button bsStyle="link" className="down-arrow">
+          <Overlay {...sharedProps} placement="top">
+            { tooltip }
+          </Overlay></Button>
+        </div>
       </div>
     );
   }
