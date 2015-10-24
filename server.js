@@ -27,6 +27,9 @@ if (!isProduction) {
         target: 'http://localhost:8080'
     });
   });
+  app.get('/*', function(req, res) {
+    res.sendFile(__dirname + '/public/index.html');
+  });
 
 }
 

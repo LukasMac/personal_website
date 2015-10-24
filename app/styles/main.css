@@ -41,7 +41,7 @@
 }
 .screen-height {
   height: 100vh;
-  min-height: 400px;
+  min-height: 700px;
 }
 
 @-webkit-keyframes updown {
@@ -59,6 +59,7 @@
   -webkit-animation: updown 3s linear infinite;
   animation: updown 3s linear infinite;
   text-align: center;
+  margin-top: 100px;
 }
 
 
@@ -81,21 +82,32 @@
   margin-bottom: 1em;
 }
 
-.example-enter {
-  background-color: #f00;
-  opacity: 0.01;
+.inlineblock {
+  position: absolute;
+  width: 80%;
 }
 
-.example-enter.example-enter-active {
+.moveUp-enter {
+  transition-duration: .3s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transform: translate3d(-100px,0,0);
+  z-index: 10000;
+}
+
+.moveUp-enter.moveUp-enter-active {
+  transform: translate3d(0px,0,0);
+}
+
+.moveUp-leave {
+  transition-duration: .1s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transform: translate3d(0px,0,0);
   opacity: 1;
-  transition: opacity 500ms ease-in;
 }
 
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.moveUp-leave.moveUp-leave-active {
+  transform: translate3d(0px,0,0);
+  opacity: 0.1;
 }

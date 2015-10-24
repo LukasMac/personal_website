@@ -1,5 +1,8 @@
 import React from 'react';
 import { PageHeader } from 'react-bootstrap';
+import { Router, Route, Link } from 'react-router';
+import { Row, Col, Image, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import terminalStateReducer from './../lib/terminalStateReducer.js';
 import CommandLineInterpreter from './../lib/commandLineInterpreter.js';
 import AboutPage from './aboutPage.js';
@@ -43,15 +46,22 @@ class App extends React.Component {
   }
 
   keyPressed(e) {
+    let currentCommand = this.state.terminal.inputText;
+
+    this.setState({
+      terminal: terminalStateReducer(this.state.terminal, e)
+    });
+
     if (e.keyCode == 13 ) {
-      let changeToPage = CommandLineInterpreter.changeToPage(this.state.terminal.inputText);
-      if (changeToPage) {
-        this.setState({page: changeToPage});
+      let newState = CommandLineInterpreter.run(currentCommand, this.state);
+
+      if (newState.page !== this.state.page) {
+        this.props.history.pushState(null, '/' + newState.page);
       }
+
+      this.setState(newState);
     }
 
-    let newState = terminalStateReducer(this.state.terminal, e);
-    this.setState({terminal: newState});
   }
 
   renderPage() {
@@ -63,12 +73,18 @@ class App extends React.Component {
   }
 
   render() {
+    const { pathname } = this.props.location
+
     return (
       <div>
-        {this.renderPage()}
+        <div className="container main-content">
+          <ReactCSSTransitionGroup component="div" transitionName="moveUp" transitionEnterTimeout={1000} transitionLeaveTimeout={100}>
+            {React.cloneElement(this.props.children || <div />, { key: pathname })}
+          </ReactCSSTransitionGroup>
+        </div>
         <Terminal {...this.state.terminal} />
       </div>
-    );
+    )
   }
 }
 

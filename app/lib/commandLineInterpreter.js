@@ -1,3 +1,5 @@
+import jQuery from 'jquery';
+
 let CommandLineInterpreter =  {
   getOutput(command) {
     if (command.match(/help$/)) {
@@ -32,15 +34,19 @@ let CommandLineInterpreter =  {
     return command + ": command not found. Type 'help' to get list of available commands";
   },
 
-  changeToPage(command) {
+  run(command, state) {
+    let stateDup = jQuery.extend(true, {}, state);
+
     if (command.match(/clear$/)) {
-      // state.set('history', [ ]);
+      stateDup.terminal.history = [ ];
     } else if (command.match(/menu\sabout$/)) {
-      return "about";
+      stateDup.page = "about";
+    } else if (command.match(/menu\scontacts$/)) {
+      stateDup.page = "contacts";
     } else if (command.match(/menu\shome$/)) {
-      return "about";
+      stateDup.page = "";
     }
-    return null;
+    return stateDup;
   }
 }
 

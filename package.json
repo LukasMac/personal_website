@@ -24,14 +24,16 @@
   },
   "dependencies": {
     "baobab": "^2.0.1",
+    "history": "^1.12.5",
     "immutable-store": "^0.5.5",
     "jquery": "^2.1.4",
     "keymaster": "^1.6.2",
     "less": "^2.5.3",
-    "less-loader": "^2.2.1",
     "react": "^0.14.0",
+    "react-addons-css-transition-group": "^0.14.0",
     "react-bootstrap": "^0.27.1",
     "react-dom": "^0.14.0",
+    "react-router": "^1.0.0-rc3",
     "url-loader": "^0.5.6"
   }
 }

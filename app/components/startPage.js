@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tooltip, OverlayTrigger, Button } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 class StartPage extends React.Component {
 
   render() {
@@ -10,11 +11,12 @@ class StartPage extends React.Component {
     );
 
     return (
-      <div className="down-arrow-container">
-        <span> <br/><br/><br/><br/></span>
-        <OverlayTrigger placement="top" overlay={tooltip}>
-          <Button bsStyle="link" className="down-arrow"></Button>
-        </OverlayTrigger>
+      <div className="inlineblock">
+          <div className="down-arrow-container">
+          <OverlayTrigger placement="top" overlay={tooltip}>
+            <Button bsStyle="link" className="down-arrow"></Button>
+          </OverlayTrigger>
+          </div>
       </div>
     );
   }
