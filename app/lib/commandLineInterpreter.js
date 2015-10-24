@@ -32,12 +32,15 @@ let CommandLineInterpreter =  {
     return command + ": command not found. Type 'help' to get list of available commands";
   },
 
-  run(command, state) {
+  changeToPage(command) {
     if (command.match(/clear$/)) {
-      state.set('history', [ ]);
+      // state.set('history', [ ]);
     } else if (command.match(/menu\sabout$/)) {
-      state.set('menuPage', 'about');
+      return "about";
+    } else if (command.match(/menu\shome$/)) {
+      return "about";
     }
+    return null;
   }
 }
 

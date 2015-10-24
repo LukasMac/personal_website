@@ -24,10 +24,6 @@
   },
   "dependencies": {
     "baobab": "^2.0.1",
-    "cerebral": "^0.20.11",
-    "cerebral-baobab": "^0.3.1",
-    "cerebral-immutable-store": "^0.1.1",
-    "cerebral-react": "^0.4.1",
     "immutable-store": "^0.5.5",
     "jquery": "^2.1.4",
     "keymaster": "^1.6.2",
