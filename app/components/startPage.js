@@ -19,10 +19,8 @@ class StartPage extends React.Component {
     return (
       <div className="inlineblock start-page">
         <div ref="target" className="down-arrow-container">
-          <Button bsStyle="link" className="down-arrow">
-          <Overlay {...sharedProps} placement="top">
-            { tooltip }
-          </Overlay></Button>
+          <div className="text-shadow">Try to exprience what developer do! Type commands below.</div>
+          <Button bsStyle="link" className="down-arrow" />
         </div>
       </div>
     );

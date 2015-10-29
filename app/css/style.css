@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     /* font-family: 'Montserrat', sans-serif; */
     font-size: 100%;
-     /* background: #FFf; */
+    background: rgba(0, 0, 0, 0.67);
     -webkit-font-smoothing: antialiased;
     color: #CCCCCC;
 }
@@ -25,8 +25,16 @@ body a{
 /*-----start-header----*/
 .bg{
   /* background:url(../images/baner.jpg) no-repeat 0px 0px; */
-  background-image: url('https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/69/690/690228/lhgn5nbh710nz2ztehp4hrypb2pii8dcptpcexwufatuanllnldizcycapbkwwa6-o.jpg?1443789431');
+  background-image: url('../images/bg.jpg');
   background-size:cover;
+  background-color: #000;
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }
 .header{
 }
