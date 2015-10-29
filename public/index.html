@@ -4,13 +4,14 @@
     <title>Lukas Maciulis, passionate Software developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--webfonts-->
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,100'
-  rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!--- //webfonts--->
+    <script type='text/javascript' src='js/jquery.min.js'></script>
+    <link rel="stylesheet" href="css/queryLoader.css" type="text/css" />
+    <script type='text/javascript' src='js/queryLoader.js'></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,100' rel='stylesheet' type='text/css'>
   </head>
   <body>
+
     <div class="bg bg1"></div>
     <div class="overlay bg1"></div>
 
@@ -44,6 +45,10 @@
     <script src="/build/bundle.js"></script>
     <!--//End-top-nav-script-->
 
+    <script>
+QueryLoader.selectorPreload = "body";
+QueryLoader.init();
+    </script>
   </body>
 </html>
 
