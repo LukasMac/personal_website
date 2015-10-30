@@ -77,6 +77,20 @@ class App extends React.Component {
 
     return (
       <div>
+          <ReactCSSTransitionGroup component="div" transitionName="moveUp" transitionEnterTimeout={5000} transitionLeaveTimeout={900}>
+      <div id="home" className="header wow bounceInDown" data-wow-delay="0.4s">
+          <div className="top-header">
+            <div className="container">
+              <h1>Lukas Maciulis</h1>
+              <span></span>
+              <p>Passionate software developer, focusing on Ruby and
+                JavaScript</p>
+            <div className="clearfix"> </div>
+          </div>
+        </div>
+      </div>
+          </ReactCSSTransitionGroup>
+
         <div className="container main-content">
           <ReactCSSTransitionGroup component="div" transitionName="moveUp" transitionEnterTimeout={1000} transitionLeaveTimeout={100}>
             {React.cloneElement(this.props.children || <div />, { key: pathname })}
