@@ -109,3 +109,24 @@
 .text-shadow {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.21);
 }
+
+.social {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  line-height: 100px !important;
+  margin: 20px;
+}
+.github-container {
+  background: linear-gradient(to right bottom, #292929 50%, #000000 50%);
+}
+.linkedin-container {
+  background: linear-gradient(to right bottom, #5F7B8F 50%, #375A73 50%);
+}
+.twitter-container {
+  background: linear-gradient(to right bottom, #82CFEB 50%, #59BDE6 50%);
+}
+.email-container {
+  background: linear-gradient(to right bottom, #DD6C60 50%, #A55048 50%);
+}
