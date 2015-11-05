@@ -13,7 +13,7 @@ class AboutPage extends React.Component {
             className="face-image" circle/>
         </Col>
         <Col xs={6} md={8}>
-          One: aaaa
+          Under contruction...
         </Col>
         </Row>
       </div>

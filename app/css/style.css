@@ -23,9 +23,9 @@ body a{
   width:70%;
 }
 /*-----start-header----*/
-.bg{
+.bg {
   /* background:url(../images/baner.jpg) no-repeat 0px 0px; */
-  background-image: url('../images/bg.jpg');
+  background-image: url(../images/bg.jpg);
   background-size:cover;
   background-color: #000;
   content : "";

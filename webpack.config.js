@@ -1,30 +1,18 @@
-var Webpack = require('webpack');
-var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'build');
-var mainPath = path.resolve(__dirname, 'app', 'main.js');
+const Webpack = require('webpack');
+const path = require('path');
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const buildPath = path.resolve(__dirname, '.bundled', 'build');
+const mainPath = path.resolve(__dirname, 'app', 'main.js');
+const devBuild = process.env.NODE_ENV !== 'production';
 
 var config = {
-
-  // Makes sure errors in console map to the correct file
-  // and line number
-  devtool: 'eval-source-map',
   entry: [
-
-    // For hot style updates
-    'webpack/hot/dev-server',
-
-    // The script refreshing the browser on none hot updates
-    'webpack-dev-server/client?http://localhost:8080',
-
     './app/styles/main.css',
     './app/css/bootstrap.css',
     './app/css/animate.css',
     './app/css/style.css',
-    // Our application
-    // './app/js/wow.min.js',
-    // './app/js/easing.js',
-    mainPath],
+    mainPath
+  ],
   output: {
 
     // We need to give Webpack a path. It does not actually need it,
@@ -37,45 +25,25 @@ var config = {
 
     // Everything related to Webpack should go through a build path,
     // localhost:3000/build. That makes proxying easier to handle
-    publicPath: '/build/'
+    publicPath: 'http://lukasmac.github.io/gptest/build/'
   },
   module: {
-
     loaders: [
-
-    // I highly recommend using the babel-loader as it gives you
-    // ES6/7 syntax and JSX transpiling out of the box
-    {
-      test: /\.js$/,
-      loader: 'babel?optional=es7.decorators',
-      exclude: [nodeModulesPath]
-    },
-
-    // Let us also add the style-loader and css-loader, which you can
-    // expand with less-loader etc.
-    {
-      test: /\.css$/,
-      loader: 'style!css'
-    },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      },
-      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
-
-{
-    test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: "url-loader?limit=10000&minetype=application/font-woff"
-  },{
-    test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: "file-loader"
-  }
+      { test: /\.js$/, loader: 'babel?optional=es7.decorators', exclude: [nodeModulesPath] },
+      { test: /\.css$/, loader: "style-loader!css-loader?prefix=aaa/" },
+      { test: /\.scss$/, loaders: ["style", "css", "sass"] },
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+      { test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ]
   },
-
-  // We have to manually add the Hot Replacement plugin when running
-  // from Node
-  plugins: [new Webpack.HotModuleReplacementPlugin()]
 };
+
+if (devBuild) {
+  config.devtool = 'eval-source-map';
+  config.entry.push('webpack/hot/dev-server');
+  config.entry.push('webpack-dev-server/client?http://localhost:8080');
+  config.plugins = [new Webpack.HotModuleReplacementPlugin()];
+}
 
 module.exports = config;
