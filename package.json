@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.config.js && git commit -am  'Deploying new build' && git push"
+    "deploy": "NODE_ENV=production webpack -p --config webpack.config.js && cd .bundled && git commit -am 'Deploying new build' && git push"
   },
   "author": "",
   "license": "ISC",
